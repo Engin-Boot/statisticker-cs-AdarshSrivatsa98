@@ -7,7 +7,7 @@ namespace Statistics.Test
     public class StatsUnitTest
     {
         [Fact]
-        public void ReportsAverageMinMax()
+        public void WhenCalculateStatisticsCalledThenReportsReult()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
@@ -17,7 +17,7 @@ namespace Statistics.Test
             Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
             Assert.True(Math.Abs(computedStats.min - 1.5) <= epsilon);
         }
-        public void ReportsNaNForEmptyInput()
+        public void WhenCalculateStatisticsCalledwithEmptyInputThenReportsNaN()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
